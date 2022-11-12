@@ -5,6 +5,14 @@
   min-height: 100vh;
 }
 
+.section {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  align-items: center;
+}
+
 .main {
   padding: 4rem 0;
   flex: 10;
@@ -110,3 +118,10 @@
     transform: rotate(360deg);
   }
 }
+
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+

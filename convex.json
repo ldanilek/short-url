@@ -1,0 +1,12 @@
+{
+  "project": "short-url",
+  "team": "lee-danilek",
+  "prodUrl": "https://hip-dugong-817.convex.cloud",
+  "functions": "convex/",
+  "authInfo": [
+    {
+      "domain": "https://dev-1rfqpgu8.us.auth0.com/",
+      "applicationID": "CQdIyspwuGGmzOSflNXqYlFleP9bgU0U"
+    }
+  ]
+}
