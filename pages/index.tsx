@@ -57,7 +57,7 @@ const ListURLs = () => {
     >Load More</button>
     : null);
 
-  const shortURL = (short) => `${window.location.origin}/${short}`;
+  const shortURL = (short: string) => `${window.location.origin}/${short}`;
 
   return <div className={styles.section}>
       <table className={styles.table}>
