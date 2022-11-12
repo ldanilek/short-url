@@ -69,7 +69,7 @@ const ListURLs = () => {
           <tbody>
         {
           results.map((u) => <tr key={u.short}>
-            <td>{u.short}</td>
+            <td><a href={`${window.location.origin}/${u.short}`}>{u.short}</a></td>
             <td>{u.url}</td>
             <td><button onClick={() => deleteURL(u.short)}>Delete</button></td>
           </tr>)
