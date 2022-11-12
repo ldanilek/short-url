@@ -57,6 +57,8 @@ const ListURLs = () => {
     >Load More</button>
     : null);
 
+  const shortURL = (short) => `${window.location.origin}/${short}`;
+
   return <div className={styles.section}>
       <table className={styles.table}>
     <thead>
@@ -69,9 +71,12 @@ const ListURLs = () => {
           <tbody>
         {
           results.map((u) => <tr key={u.short}>
-            <td><a href={`${window.location.origin}/${u.short}`}>{u.short}</a></td>
+            <td><a href={shortURL(u.short)}>{u.short}</a></td>
             <td>{u.url}</td>
-            <td><button onClick={() => deleteURL(u.short)}>Delete</button></td>
+            <td>
+              <button onClick={() => navigator.clipboard.writeText(shortURL(u.short))}>Copy</button>
+              <button onClick={() => deleteURL(u.short)}>Delete</button>
+            </td>
           </tr>)
         }
         </tbody>
