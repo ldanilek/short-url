@@ -82,12 +82,13 @@ const ListURLs = () => {
 
 const Home: NextPage = () => {
   const storeUser = useMutation("storeUser");
+  const [userExists, setUserExists] = useState(false);
 
   useEffect(() => {
     async function createUser() {
       await storeUser();
     }
-    createUser();
+    createUser().then(() => setUserExists(true));
   }, [storeUser]);
 
   return (
@@ -103,9 +104,8 @@ const Home: NextPage = () => {
           Your URLs
         </h1>
         <Logout />
-        <CreateNewShortcut />
-
-        <ListURLs />
+        {userExists ? <CreateNewShortcut /> : null}
+        {userExists ? <ListURLs /> : null}
       </main>
 
       <footer className={styles.footer}>
