@@ -71,7 +71,11 @@ const ListURLs = () => {
           <tbody>
         {
           results.map((u) => <tr key={u.short}>
-            <td><a href={shortURL(u.short)}>{u.short}</a></td>
+            <td><a
+              href={shortURL(u.short)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{u.short}</a></td>
             <td>{u.url}</td>
             <td>
               <button onClick={() => navigator.clipboard.writeText(shortURL(u.short))}>Copy</button>
@@ -124,6 +128,7 @@ const Home: NextPage = () => {
             <Image src="/convex.svg" alt="Convex Logo" width={90} height={18} />
           </span>
         </a>
+        <p>Featuring pagination and server-side queries</p>
       </footer>
     </div>
   )
