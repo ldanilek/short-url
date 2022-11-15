@@ -87,13 +87,14 @@ export default mutation(
         q.eq("tokenIdentifier", identity.tokenIdentifier)
       )
       .unique();
-    const existingURL = await db.query('urls').withIndex('by_short', q => q.eq('short', short)).first();
-    if (existingURL) {
-      throw new Error('url with this short already exists');
-    }
 
     if (!short) {
       short = await generateShort(url, db);
+    }
+
+    const existingURL = await db.query('urls').withIndex('by_short', q => q.eq('short', short)).first();
+    if (existingURL) {
+      throw new Error('url with this short already exists');
     }
 
     await db.insert('urls', {
