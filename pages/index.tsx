@@ -31,8 +31,8 @@ const CreateNewShortcut = () => {
 
   return <div className={styles.section}>
           <h2>Create new shortcut</h2>
-        <input type="text" placeholder="url" value={url} onChange={(e) => setURL(e.target.value)} />
-        <input type="text" placeholder="short" value={short} onChange={(e) => setShort(e.target.value)} />
+        <input type="text" placeholder="long url" value={url} onChange={(e) => setURL(e.target.value)} />
+        <input type="text" placeholder="short (leave blank to auto-generate)" value={short} onChange={(e) => setShort(e.target.value)} />
         <button className={styles.button} onClick={async () => {
           await createURL(url, short);
           setURL('');
